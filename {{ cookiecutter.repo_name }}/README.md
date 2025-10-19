@@ -37,24 +37,31 @@
 ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
 │                         generated with `pip freeze > requirements.txt`
 │
+├── scripts            <- Standalone executable scripts for running pipelines
+│   ├── process_data.py        <- Run data processing pipeline
+│   ├── train_model.py         <- Run model training pipeline  
+│   ├── predict.py             <- Run prediction pipeline
+│   └── generate_plots.py      <- Generate visualizations
+│
 ├── setup.cfg          <- Configuration file for flake8
 │
-└── {{ cookiecutter.module_name }}   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes {{ cookiecutter.module_name }} a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+└── src                <- Source code for use in this project.
+    └── {{ cookiecutter.module_name }}   <- Python package with reusable code
+        │
+        ├── __init__.py             <- Makes {{ cookiecutter.module_name }} a Python module
+        │
+        ├── config.py               <- Store useful variables and configuration
+        │
+        ├── dataset.py              <- Scripts to download or generate data
+        │
+        ├── features.py             <- Code to create features for modeling
+        │
+        ├── modeling                
+        │   ├── __init__.py 
+        │   ├── predict.py          <- Code to run model inference with trained models          
+        │   └── train.py            <- Code to train models
+        │
+        └── plots.py                <- Code to create visualizations
 ```
 
 --------

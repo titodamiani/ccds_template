@@ -21,9 +21,9 @@
         "none"
     ],
     "dependency_file": [
+        "environment.yml",
         "requirements.txt",
         "pyproject.toml",
-        "environment.yml",
         "Pipfile",
         "pixi.toml"
     ],

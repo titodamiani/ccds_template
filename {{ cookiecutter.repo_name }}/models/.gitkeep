@@ -1,0 +1,14 @@
+# Models Directory
+
+This directory is for storing trained models, model predictions, or model summaries.
+
+## Recommended Structure
+
+- `trained/` - Trained model files (e.g., .pkl, .joblib, .h5)
+- `predictions/` - Model predictions and outputs
+- `summaries/` - Model performance reports and summaries
+- `experiments/` - Experimental model variations
+
+## Usage
+
+Your training scripts in `scripts/` will save models here, and prediction scripts will load them from here.

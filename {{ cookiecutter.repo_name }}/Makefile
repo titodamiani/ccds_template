@@ -63,15 +63,15 @@ format:
 ## Lint using flake8, black, and isort (use `make format` to do formatting)
 .PHONY: lint
 lint:
-	flake8 {{ cookiecutter.module_name }}
-	isort --check --diff {{ cookiecutter.module_name }}
-	black --check {{ cookiecutter.module_name }}
+	flake8 src scripts
+	isort --check --diff src scripts
+	black --check src scripts
 
 ## Format source code with black
 .PHONY: format
 format:
-	isort {{ cookiecutter.module_name }}
-	black {{ cookiecutter.module_name }}
+	isort src scripts
+	black src scripts
 {% endif %}
 
 {% if cookiecutter.testing_framework != 'none' %}
@@ -159,7 +159,22 @@ create_environment:
 ## Make dataset
 .PHONY: data
 data: requirements
-	$(PYTHON_INTERPRETER) {{ cookiecutter.module_name }}/dataset.py
+	$(PYTHON_INTERPRETER) scripts/process_data.py
+
+## Train model
+.PHONY: train
+train: requirements
+	$(PYTHON_INTERPRETER) scripts/train_model.py
+
+## Make predictions
+.PHONY: predict
+predict: requirements
+	$(PYTHON_INTERPRETER) scripts/predict.py
+
+## Generate plots
+.PHONY: plots
+plots: requirements
+	$(PYTHON_INTERPRETER) scripts/generate_plots.py
 {% endif %}
 
 #################################################################################
